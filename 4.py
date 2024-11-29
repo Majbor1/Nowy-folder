@@ -8,12 +8,12 @@ def f(subject):
 
     top_avg = max(avg)
     
-    for key, value in subject.items():
-        
-    
-    
-    
-        
+    i = 0
+    for key in subject.keys():
+        if top_avg == avg[i]:
+            return key
+        i += 1
+
     
 if __name__ == "__main__":
     print(f({"math":[3,4,4],"geo":[5,4,4,4],"comp":[5,4]}))    

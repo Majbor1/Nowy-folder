@@ -8,7 +8,7 @@ def f(first_letter, last_letter):
         pattern = fr'\b{first_letter}\w*{last_letter}\b'
         
         # Find all matching words
-        matches = re.findall(pattern, content, re.IGNORECASE)
+        matches = re.findall(pattern, content)
     
     return len(matches)  # Return the count of matches
 

@@ -1,18 +1,14 @@
+import re
+
 def f(arr):
-    valid = 'qwertyuiopasdfghjklzxcvbnm_1234567890'
-    is_valid = False
-    count = 0
-    for name in arr:
-        for char in name:
-            if char in valid:
-                is_valid = True
-            else:
-                is_valid = False
-                break
-                
-            
-        if is_valid and len(name) >= 4 and len(name) <= 12:
-            count += 1
-    return count
+    
+    pattern = r'^[a-z0-9_]{4,12}$'
+        
+    matches = 0
+    for word in arr:
+        if re.match(pattern, word):
+            matches += 1
+    
+    return matches
             
 print(f(["uek","water_7_x","anna.may","a_b_c_d_e_f"]))
